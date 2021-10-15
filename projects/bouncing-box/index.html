@@ -18,7 +18,7 @@
 		}
 		.board{
 			height: 100vh;
-			background-color: rgb(255, 255, 255);
+			background-color: rgb(15, 14, 14)
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -67,8 +67,8 @@
 			var positionX = 0;
 			var points = 0;
 			var speed = 10;
-			var positionY;
-			var speedY;
+			var positionY = 0;
+			var speedY = 10;
 			var boardHeight = jQuery(window).height();
 			
 			/* 
@@ -85,8 +85,14 @@
 				if(positionX < 0) {
 					speed = -speed;
 				}
+				positionY = positionY + speedY;
 				moveBoxTo(positionX, positionY);
-				
+				if(positionY >= boardHeight) {
+					speedY = -speedY;
+				}
+				if(positionY < 0) {
+					speedY = -speedY;
+				}
 			};
 
 			/* 
