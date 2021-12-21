@@ -23,6 +23,7 @@ var init = function (window) {
         var circle;
         var circles = [];
 
+
         // TODO 2 : Create a function that draws a circle 
         function drawCircle() {
             circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
@@ -59,8 +60,8 @@ var init = function (window) {
             // TODO 9 : Iterate over the array
            for (var i = 0; i < circles.length; i++) {
                var eachValue = circles[i];
-               eachValue += physikz.updatePosition(circles[i]);
-               eachValue += game.checkCirclePosition(circles[i]);
+               physikz.updatePosition(circles[i]);
+               game.checkCirclePosition(circles[i]);
            }
         }
     
